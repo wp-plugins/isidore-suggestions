@@ -1,6 +1,6 @@
 === Isidore Suggestions ===
 
-Contributors: huma-num
+Contributors: Huma-Num
 Tags: isidore, suggestions, linked data, sciences humaines et sociales, web sémantique, digital humanities, système de recommandation, HUMA-NUM, semantic web, Art and Humanities, recommendation system
 Requires at least: 3.0.0
 Tested up to: 4.2

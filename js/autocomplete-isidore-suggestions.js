@@ -27,7 +27,7 @@ jQuery.widget( "custom.catcomplete", jQuery.ui.autocomplete, {
 			request.nonce = IsidoreSuggestionsAutocomplete.nonce;
 			jQuery.ajax({
 				url : IsidoreSuggestionsAutocomplete.url,
-				method : 'POST',
+				type : 'POST',
 				data : request,
 				dataType : 'json',
 				success : response

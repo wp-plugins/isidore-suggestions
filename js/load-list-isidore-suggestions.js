@@ -9,7 +9,7 @@ jQuery(document).ready(function(){
 		if(query != '' && limit != ''){
   			jQuery.ajax({
   				url: LoadListIsidoreSuggestions.url,
-  				method : 'POST',
+  				type : 'POST',
   				data: {
   					action: LoadListIsidoreSuggestions.action,
   					nonce: LoadListIsidoreSuggestions.nonce,

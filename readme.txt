@@ -23,6 +23,10 @@ Il est possible de cibler votre recherche en sélectionnant une ou plusieurs dis
 2. Activez l'extension dans le menu "extension" de Wordpress.
 3. Insérez et paramétrez le widget dans le menu "apparence" de Wordpress.
 
+Note : Assurez-vous que la fonction allow_url_fopen est bien activée
+
+
+Note : Assurez-vous dans votre configuration PHP que l'option "allow_url_fopen" est bien activée.
 
 == Screenshots ==
 

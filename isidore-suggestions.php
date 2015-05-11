@@ -449,7 +449,12 @@ class Isidore_suggestions extends WP_Widget {
 				
 			} else {
 				// Si pas de reponse de l'API
-				$ul = '<li>' . __( 'API error', 'isidore-suggestions' ) . '</li>';
+				$ul = '<li>' . __( 'API error', 'isidore-suggestions' );
+				if(ini_get('allow_url_fopen') != 1){
+					//s'il s'agit d'une erreur de configuration du serveur
+					$ul .= ' : Please add allow_url_open to your php.ini';
+				}
+				$ul .= '</li>';
 			}
 						
 		} else {

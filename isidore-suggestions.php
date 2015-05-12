@@ -409,7 +409,7 @@ class Isidore_suggestions extends WP_Widget {
 	 
 	 	// Verification du nonce
 		$retrieved_nonce = $_POST['nonce'];
-		if ( !wp_verify_nonce( $retrieved_nonce, 'load_list_isidore_suggestions_nonce' ) ) die( 'Failed security check' );
+		if ( !wp_verify_nonce( $retrieved_nonce, 'load_list_isidore_suggestions_nonce' ) ) die( __('AJAX error : Failed security check !', 'isidore-suggestions') );
 		
 		$query	= $_POST['query'];
 		$limit	= $_POST['limit'];
@@ -423,43 +423,47 @@ class Isidore_suggestions extends WP_Widget {
 		
 			if ( $reponse ) {
 				$xml = new Domdocument();
-				$xml->loadXML( $reponse );
-				$xpath = new DOMXpath( $xml );
+				$load = @$xml->loadXML( $reponse );
+				if ( $load ) {
+					
+					$xpath = new DOMXpath( $xml );
 			
-				$xpath_query = '//afs:clientData[@id="main"]/isidore';
-				//requête XPATH pour récupérer la liste des noeuds isidore
-				$nodes = $xpath->query( $xpath_query );
-				// Si on a bien un résultat
-				if ( $nodes->length > 0 ) {
-					foreach ( $nodes as $node ) {
-						$uri = $node->getAttribute( 'uri' );
-						foreach ( $node->childNodes as $child ) {
-							if ( $child->nodeName == 'title' ) {
-								$title = $child->nodeValue;
-								break; // on prend en compte uniquement le premier titre en compte
+					$xpath_query = '//afs:clientData[@id="main"]/isidore';
+					//requête XPATH pour récupérer la liste des noeuds isidore
+					$nodes = $xpath->query( $xpath_query );
+					// Si on a bien un résultat
+					if ( $nodes->length > 0 ) {
+						foreach ( $nodes as $node ) {
+							$uri = $node->getAttribute( 'uri' );
+							foreach ( $node->childNodes as $child ) {
+								if ( $child->nodeName == 'title' ) {
+									$title = $child->nodeValue;
+									break; // on prend en compte uniquement le premier titre en compte
+								}
 							}
+							$ul .= '<li><a href="http://rechercheisidore.fr/search/resource/?uri=' . $uri . '" target="_blank">' . $title . '</a></li>';
 						}
-						$ul .= '<li><a href="http://rechercheisidore.fr/search/resource/?uri=' . $uri . '" target="_blank">' . $title . '</a></li>';
 					}
-				}
-				// Si aucun resultat
-				if( $ul == '' ) {
-					$ul = '<li>' . __( 'No suggestion', 'isidore-suggestions' ) . ' &hellip;</li>';
-				}
-				
+					// Si aucun resultat
+					if( $ul == '' ) {
+						$ul = '<li>' . __( 'No suggestion', 'isidore-suggestions' ) . ' &hellip;</li>';
+					}
+				} else {
+					$ul = '<li>' . __( 'XML error : Unable to load the data !', 'isidore-suggestions' ) . '</li>';
+				}	
 			} else {
-				// Si pas de reponse de l'API
-				$ul = '<li>' . __( 'API error', 'isidore-suggestions' );
-				if(ini_get('allow_url_fopen') != 1){
+				if ( ini_get('allow_url_fopen') != 1 ) {
 					//s'il s'agit d'une erreur de configuration du serveur
-					$ul .= ' : Please add allow_url_open to your php.ini';
+					$ul = '<li>' . __( 'PHP error : Ask your host to enable allow_url_fopen for your blog !', 'isidore-suggestions' ) . '</li>';
 				}
-				$ul .= '</li>';
+				else{
+				}
+				$ul = '<li>' . __( 'API error : No response !', 'isidore-suggestions' ) . '</li>';
 			}
 						
 		} else {
 			// Si les parametres de recherche ne sont pas valides
-			$ul = '<li>' . __( 'Invalid parameters', 'isidore-suggestions' ) . '</li>';
+			$ul = '<li>' . __( 'API error : Cataclysmic error ! Contact the support...', 'isidore-suggestions' ) . '</li>';
 		}
 		
 		echo $ul;

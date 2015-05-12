@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: isidore-suggestions\n"
-"POT-Creation-Date: 2015-04-30 13:36+0100\n"
-"PO-Revision-Date: 2015-04-30 13:37+0100\n"
+"POT-Creation-Date: 2015-05-12 14:02+0100\n"
+"PO-Revision-Date: 2015-05-12 14:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -170,18 +170,32 @@ msgstr "Ajout d'un champ de recherche Isidore"
 msgid "Keywords"
 msgstr "Mots-clés"
 
-#: isidore-suggestions.php:388
+#: isidore-suggestions.php:389
 msgid "Authors"
 msgstr "Auteurs"
 
-#: isidore-suggestions.php:446
+#: isidore-suggestions.php:412
+msgid "AJAX error : Failed security check !"
+msgstr "Erreur AJAX : le contrôle de sécurité a échoué !"
+
+#: isidore-suggestions.php:449
 msgid "No suggestion"
-msgstr "Aucune suggestion"
+msgstr "Aucune suggestion ne peut être fournie"
 
-#: isidore-suggestions.php:451
-msgid "API error"
-msgstr "Erreur API"
+#: isidore-suggestions.php:452
+msgid "XML error : Unable to load the data !"
+msgstr "Erreur XML : Impossible de charger le flux de données !"
 
-#: isidore-suggestions.php:456
-msgid "Invalid parameters"
-msgstr "Paramètres de recherche invalides"
+#: isidore-suggestions.php:457
+msgid "PHP error : Ask your host to enable allow_url_fopen for your blog !"
+msgstr ""
+"Erreur PHP : Demandez à votre hébergeur d’autoriser le paramètre "
+"allow_url_open dans PHP !"
+
+#: isidore-suggestions.php:461
+msgid "API error : No response !"
+msgstr "Erreur API : pas de réponse !"
+
+#: isidore-suggestions.php:466
+msgid "API error : Cataclysmic error ! Contact the support..."
+msgstr "Erreur API : Erreur cataclysmique ! Contactez le support..."

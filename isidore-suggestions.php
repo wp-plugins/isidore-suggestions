@@ -456,11 +456,10 @@ class Isidore_suggestions extends WP_Widget {
 					//s'il s'agit d'une erreur de configuration du serveur
 					$ul = '<li>' . __( 'PHP error : Ask your host to enable allow_url_fopen for your blog !', 'isidore-suggestions' ) . '</li>';
 				}
-				else{
+				else {
+					$ul = '<li>' . __( 'API error : No response !', 'isidore-suggestions' ) . '</li>';
 				}
-				$ul = '<li>' . __( 'API error : No response !', 'isidore-suggestions' ) . '</li>';
-			}
-						
+			}			
 		} else {
 			// Si les parametres de recherche ne sont pas valides
 			$ul = '<li>' . __( 'API error : Cataclysmic error ! Contact the support...', 'isidore-suggestions' ) . '</li>';

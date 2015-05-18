@@ -33,15 +33,12 @@ Note : Assurez-vous dans votre configuration PHP que l'option "allow_url_fopen" 
 == Changelog ==
 
 = 1.1.1 =
-
-Meilleur affichage du logo Isidore sur un fond coloré
-Messages d'erreur plus explicites en cas de problème au niveau de l'affichage des suggestions
+* Meilleur affichage du logo Isidore sur un fond coloré
+* Messages d'erreur plus explicites en cas de problème au niveau de l'affichage des suggestions
 
 = 1.1 =
-
-Correction d’une erreur AJAX avec Jquery antérieur à la version 1.9.0
+* Correction d’une erreur AJAX avec Jquery antérieur à la version 1.9.0
 
 = 1.0 =
-
-Première version du plugin
+* Première version du plugin
 

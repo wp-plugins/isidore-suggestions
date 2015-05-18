@@ -2,7 +2,7 @@
 /**
  * Plugin Name:	Isidore Suggestions 
  * Description:	Avec Isidore Suggestions, enrichissez vos articles de recommandations provenant d'Isidore, plateforme de recherche en SHS de 3 millions de données.
- * Version:		1.1
+ * Version:		1.1.1
  * Author:		HUMA-NUM
  * Author URI:	http://www.huma-num.fr 
  * License:		GPL-2.0+

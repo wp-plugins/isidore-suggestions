@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: isidore-suggestions\n"
-"POT-Creation-Date: 2015-05-12 14:07+0100\n"
-"PO-Revision-Date: 2015-05-13 12:05+0100\n"
+"POT-Creation-Date: 2015-05-18 14:28+0100\n"
+"PO-Revision-Date: 2015-05-18 14:28+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -16,10 +16,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: isidore-suggestions.php:40
-msgid "Displays suggestions to resources from Isidore for a post based on its tags."
+msgid ""
+"Displays suggestions to resources from Isidore for a post based on its tags."
 msgstr ""
-"Muestra sugerencias a los recursos de Isidore para una entrada basadas en sus "
-"etiquetas."
+"Muestra sugerencias a los recursos de Isidore para una entrada basadas en "
+"sus etiquetas."
 
 #: isidore-suggestions.php:112 isidore-suggestions.php:162
 msgid "Search in Isidore"
@@ -177,22 +178,28 @@ msgstr "Autores"
 msgid "AJAX error : Failed security check !"
 msgstr "Error en la solicitud del control de seguridad !"
 
-#: isidore-suggestions.php:449
+#: isidore-suggestions.php:450
+msgid "More results ..."
+msgstr "Más resultados ..."
+
+#: isidore-suggestions.php:455
 msgid "No suggestion"
 msgstr "Ninguna sugerencia"
 
-#: isidore-suggestions.php:452
+#: isidore-suggestions.php:458
 msgid "XML error : Unable to load the data !"
 msgstr "Error al cargar los datos XML !"
 
-#: isidore-suggestions.php:457
+#: isidore-suggestions.php:463
 msgid "PHP error : Ask your host to enable allow_url_fopen for your blog !"
-msgstr "Error de PHP : Pregunte a su host web para activar allow_url_fopen en PHP !"
+msgstr ""
+"Error de PHP : Pregunte a su host web para activar allow_url_fopen en PHP !"
 
-#: isidore-suggestions.php:461
+#: isidore-suggestions.php:466
 msgid "API error : No response !"
 msgstr "Error de API ó API no disponible !"
 
-#: isidore-suggestions.php:466
+#: isidore-suggestions.php:471
 msgid "API error : Cataclysmic error ! Contact the support..."
-msgstr "Error de API : Póngase en contacto con los servicios de soporte técnico !"
+msgstr ""
+"Error de API : Póngase en contacto con los servicios de soporte técnico !"

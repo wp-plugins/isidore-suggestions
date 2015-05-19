@@ -4,7 +4,7 @@ Contributors: Huma-Num
 Tags: isidore, suggestions, linked data, sciences humaines et sociales, web sémantique, digital humanities, système de recommandation, HUMA-NUM, semantic web, Art and Humanities, recommendation system
 Requires at least: 3.0.0
 Tested up to: 4.2
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,9 @@ Note : Assurez-vous dans votre configuration PHP que l'option "allow_url_fopen" 
 2. Affichage des suggestions
 
 == Changelog ==
+
+= 1.2.1 =
+* Possibilité pour les lecteurs d'afficher plus de résultats dans les suggestions
 
 = 1.1.1 =
 * Meilleur affichage du logo Isidore sur un fond coloré

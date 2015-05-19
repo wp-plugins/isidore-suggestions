@@ -2,7 +2,7 @@
 /**
  * Plugin Name:	Isidore Suggestions 
  * Description:	Avec Isidore Suggestions, enrichissez vos articles de recommandations provenant d'Isidore, plateforme de recherche en SHS de 3 millions de données.
- * Version:		1.1.1
+ * Version:		1.2.1
  * Author:		HUMA-NUM
  * Author URI:	http://www.huma-num.fr 
  * License:		GPL-2.0+
@@ -274,7 +274,7 @@ class Isidore_suggestions extends WP_Widget {
 	 * @return string url d'une requête vers l'API d'Isidore
 	 */
 	function isidore_query_builder( $tags_array, $disciplines_array ) {
-		$query				= 'http://www.rechercheisidore.fr/repository/search?afs:query=&afs:page=1';
+		$query				= 'http://www.rechercheisidore.fr/repository/search?afs:query=';
 		$filter_subjects	= ''; //filtres pour les mots-clefs
 		$filter_disciplines	= ''; //filtres pour les disciplines
 		
@@ -413,13 +413,14 @@ class Isidore_suggestions extends WP_Widget {
 		
 		$query	= $_POST['query'];
 		$limit	= $_POST['limit'];
+		$page 	= $_POST['page'];
 		
 		$ul		= '';
 	
 		// Verification des arguments $query et $limit
-		if( preg_match( '#^http://www\.rechercheisidore\.fr/repository/search#', $query ) and ctype_digit( strval( $limit ) ) ) {
+		if( preg_match( '#^http://www\.rechercheisidore\.fr/repository/search#', $query ) and ctype_digit( strval( $limit ) ) and ctype_digit( strval( $page ) ) ) {
 		
-			$reponse = @file_get_contents( $_POST['query'] . '&afs:replies=' . $limit);
+			$reponse = @file_get_contents( $_POST['query'] . '&afs:page=' . $page . '&afs:replies=' . $limit);
 		
 			if ( $reponse ) {
 				$xml = new Domdocument();
@@ -442,6 +443,11 @@ class Isidore_suggestions extends WP_Widget {
 								}
 							}
 							$ul .= '<li><a href="http://rechercheisidore.fr/search/resource/?uri=' . $uri . '" target="_blank">' . $title . '</a></li>';
+						}
+						//ajout du lien vers plus de résultats (si possible)
+						$nextPage = $xpath->query( '//afs:replySet/afs:pager/@nextPage' );
+						if( $nextPage->length > 0 ) {
+							$ul .= '<li style="text-align:center;list-style-type:none;padding-top:10px"><button class="isidore-suggestions-showmore" nextPage="' . $nextPage->item(0)->nodeValue . '">' . __( 'More results ...', 'isidore-suggestions' ) . '</button></li>';
 						}
 					}
 					// Si aucun resultat

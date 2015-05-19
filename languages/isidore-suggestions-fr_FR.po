@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: isidore-suggestions\n"
-"POT-Creation-Date: 2015-05-12 14:02+0100\n"
-"PO-Revision-Date: 2015-05-13 12:05+0100\n"
+"POT-Creation-Date: 2015-05-18 14:26+0100\n"
+"PO-Revision-Date: 2015-05-18 14:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -16,10 +16,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: isidore-suggestions.php:40
-msgid "Displays suggestions to resources from Isidore for a post based on its tags."
+msgid ""
+"Displays suggestions to resources from Isidore for a post based on its tags."
 msgstr ""
-"Affiche pour un post des suggestions vers les ressources d'Isidore en se basant sur les mots-"
-"clefs qui lui sont associés."
+"Affiche pour un post des suggestions vers les ressources d'Isidore en se "
+"basant sur les mots-clefs qui lui sont associés."
 
 #: isidore-suggestions.php:112 isidore-suggestions.php:162
 msgid "Search in Isidore"
@@ -177,22 +178,28 @@ msgstr "Auteurs"
 msgid "AJAX error : Failed security check !"
 msgstr "Erreur AJAX : le contrôle de sécurité a échoué !"
 
-#: isidore-suggestions.php:449
+#: isidore-suggestions.php:450
+msgid "More results ..."
+msgstr "Plus de résultats ..."
+
+#: isidore-suggestions.php:455
 msgid "No suggestion"
 msgstr "Aucune suggestion ne peut être fournie"
 
-#: isidore-suggestions.php:452
+#: isidore-suggestions.php:458
 msgid "XML error : Unable to load the data !"
 msgstr "Erreur XML : Impossible de charger le flux de données !"
 
-#: isidore-suggestions.php:457
+#: isidore-suggestions.php:463
 msgid "PHP error : Ask your host to enable allow_url_fopen for your blog !"
-msgstr "Erreur PHP : Demandez à votre hébergeur d’autoriser le paramètre allow_url_open dans PHP !"
+msgstr ""
+"Erreur PHP : Demandez à votre hébergeur d’autoriser le paramètre "
+"allow_url_open dans PHP !"
 
-#: isidore-suggestions.php:461
+#: isidore-suggestions.php:466
 msgid "API error : No response !"
 msgstr "Erreur API : pas de réponse !"
 
-#: isidore-suggestions.php:466
+#: isidore-suggestions.php:471
 msgid "API error : Cataclysmic error ! Contact the support..."
 msgstr "Erreur API : Erreur cataclysmique ! Contactez le support..."

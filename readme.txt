@@ -22,6 +22,7 @@ Il est possible de cibler votre recherche en taguant le contenu de vos articles 
 1. Téléchargez le dossier de l'extension dans le répertoire wp-content/plugins.
 2. Activez l'extension dans le menu "extension" de Wordpress.
 3. Insérez et paramétrez le widget dans le menu "apparence" de Wordpress.
+4. Dans le mode visuel de l’éditeur de texte de votre blog, taguez si besoin le contenu de vos articles en cliquant sur l’icône Isidore
 
 Note : Assurez-vous dans votre configuration PHP que l'option "allow_url_fopen" est bien activée.
 
@@ -29,6 +30,7 @@ Note : Assurez-vous dans votre configuration PHP que l'option "allow_url_fopen" 
 
 1. Paramétrage du plugin
 2. Affichage des suggestions
+3. Taggage manuel du contenu d’un article
 
 == Changelog ==
 

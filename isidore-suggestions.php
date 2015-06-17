@@ -2,7 +2,7 @@
 /**
  * Plugin Name:	Isidore Suggestions 
  * Description:	Avec Isidore Suggestions, enrichissez vos articles de recommandations provenant d'Isidore, plateforme de recherche en SHS de 3 millions de données.
- * Version:		1.2.1
+ * Version:		2.0.0
  * Author:		HUMA-NUM
  * Author URI:	http://www.huma-num.fr 
  * License:		GPL-2.0+
@@ -73,10 +73,11 @@ class Isidore_suggestions extends WP_Widget {
 			global $post;
 			
 			$tags_names		= wp_get_post_tags( $post->ID, array( 'fields' => 'names' ) );
+			$spans_isidore	= $this->isidore_parse_post_content( $post->post_content );
 			
-			if ( count( $tags_names ) > 0 ) {
+			if ( ( count( $tags_names ) > 0 ) or ( count( $spans_isidore ) > 0 ) ) {
 				
-				$query = $this->isidore_query_builder( $tags_names, $instance['disciplines_suggestions'] );
+				$query = $this->isidore_query_builder( $tags_names, $instance['disciplines_suggestions'], $spans_isidore );
 				
 				if( $instance['title_isidore_search'] != '' ) {
 					$widget_content .= $before_title . '<a href="http://rechercheisidore.fr" target="_blank"><img id="widget-isidore-suggestions-logo" src="' . plugins_url( 'images/logoisidore.png', __FILE__ ) . '" alt="logo_isidore" width="30px" style="display:inline-block;vertical-align: middle;margin-right:10px;"></a><span style="vertical-align:middle;">' . $instance['title_suggestions'] . '</span>' . $after_title;
@@ -270,13 +271,15 @@ class Isidore_suggestions extends WP_Widget {
 	 *
 	 * @param array $tags_array liste de mots-clefs d'un article
 	 * @param array $disciplines_array liste d'identifiants de disciplines Isidore
+	 * @param array $fts_array liste de données textuelles extraits d'un article
 	 *
 	 * @return string url d'une requête vers l'API d'Isidore
 	 */
-	function isidore_query_builder( $tags_array, $disciplines_array ) {
+	function isidore_query_builder( $tags_array, $disciplines_array, $fts_array ) {
 		$query				= 'http://www.rechercheisidore.fr/repository/search?afs:query=';
 		$filter_subjects	= ''; //filtres pour les mots-clefs
 		$filter_disciplines	= ''; //filtres pour les disciplines
+		$filter_fts			= ''; //filtres fts (contenu des balises span isidore)
 		
 		$i = 0;
 		//$tag_limit = 3; // Nombre limite de mots-clefs pris en compte (ex: les trois premiers)
@@ -305,7 +308,45 @@ class Isidore_suggestions extends WP_Widget {
 			$query .= '&afs:filter=' . urlencode( $filter_disciplines );
 		}
 		
+		$k = 0;
+		foreach ( $fts_array as $fts ) {
+			if ( $k > 0 ) {
+				$filter_fts .= ' or ';
+			}
+			$filter_fts .= 'fts("' . $fts . '")';
+			$k++;
+		}
+		if ( $filter_fts != '' ) {
+			$query .= '&afs:filter=' . urlencode( $filter_fts );
+		}
+		
 		return $query;
+	}
+	
+	/**
+	 * Parse le contenu de l'article pour récupérer les contenus des éléments 
+	 * <span class="isidore"></span> s'ils sont présents
+	 *
+	 * @param string $content le contenu d'un article wordpess
+	 *
+	 * @return array le contenu des balises span isidore si présentes
+	 */
+	function isidore_parse_post_content( $content ) {
+		$spans_isidore = array();
+		preg_match_all( "#<span class=\"isidore\">(.*?)<\/span>#", $content, $isidore );
+		if ( isset( $isidore[1] ) ) {
+			// Nettoyage
+			foreach ( $isidore[1] as $span_content ) {
+				$span_content = strip_tags( $span_content );
+				$span_content = preg_replace('#\"#','', $span_content);
+				$span_content = trim( $span_content );
+				if ( $span_content != "" ){
+					$spans_isidore[] = $span_content;
+				}
+			}
+			
+		}
+		return $spans_isidore;
 	}
 	
 	/**
@@ -489,5 +530,25 @@ add_action( 'wp_ajax_nopriv_isidore_suggestions_autocomplete', array( 'Isidore_s
 add_action( 'wp_ajax_load_list_isidore_suggestions', array( 'Isidore_suggestions', 'load_list_isidore_suggestions' ) );
 add_action( 'wp_ajax_nopriv_load_list_isidore_suggestions', array( 'Isidore_suggestions', 'load_list_isidore_suggestions' ) );
 
+/* TinyMCE */
+//add style to the TinyMCE visual editor
+add_action( 'admin_init', 'isidore_bouton_style' );
+function isidore_bouton_style() {
+    add_editor_style(  plugins_url( 'TinyMCE/css/back-isidore-suggestions.css', __FILE__) );
+}
+//register and add new button
+add_action( 'init', 'isidore_suggestions_button' );
+function isidore_suggestions_button() {
+    add_filter( 'mce_external_plugins', 'isidore_suggestions_add_button' );
+    add_filter( 'mce_buttons', 'isidore_suggestions_register_button' );
+}
+function isidore_suggestions_add_button( $plugin_array ) {
+    $plugin_array['isidoreSuggestions'] = plugins_url( 'TinyMCE/js/back-isidore-suggestions.js', __FILE__);
+    return $plugin_array;
+}
+function isidore_suggestions_register_button( $buttons ) {
+    array_push( $buttons, 'addIsidoreSpan'); // ajout d'un bouton addIsidoreSpan
+    return $buttons;
+}
 
 ?>

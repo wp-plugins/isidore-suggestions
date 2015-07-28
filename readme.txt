@@ -4,7 +4,7 @@ Contributors: Huma-Num
 Tags: isidore, suggestions, linked data, sciences humaines et sociales, web sémantique, digital humanities, système de recommandation, HUMA-NUM, semantic web, Art and Humanities, recommendation system
 Requires at least: 3.0.0
 Tested up to: 4.2
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,8 @@ Avec ce widget, vous pouvez afficher sur la page de vos articles des suggestions
 
 Ces suggestions sont proposées à partir des mots-clés associés à votre article.
 Il est possible de cibler votre recherche en taguant le contenu de vos articles ou encore en sélectionnant une ou plusieurs disciplines. Le choix du nombre maximal de suggestions affichées est paramétrable. Vous pouvez également intégrer un champ de recherche simple qui vous permet d'interroger directement la plateforme ISIDORE.
+
+Ce widget est disponible en version allemande, anglaise, espagnole, française, italienne et portugaise.
 
 == Installation ==
 
@@ -33,6 +35,9 @@ Note : Assurez-vous dans votre configuration PHP que l'option "allow_url_fopen" 
 3. Taggage manuel du contenu d’un article
 
 == Changelog ==
+
+= 2.0.1 =
+* Traduction du plugin en allemand, italien et portugais (en plus de l'anglais, de l'espagnol et du français déjà disponibles)
 
 = 2.0.0 =
 * Taguez le contenu de vos articles afin de mieux cibler les résultats des suggestions

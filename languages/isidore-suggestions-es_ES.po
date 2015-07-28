@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: isidore-suggestions\n"
 "POT-Creation-Date: 2015-05-18 14:28+0100\n"
-"PO-Revision-Date: 2015-05-18 14:28+0100\n"
+"PO-Revision-Date: 2015-07-27 15:52+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -16,11 +16,8 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: isidore-suggestions.php:40
-msgid ""
-"Displays suggestions to resources from Isidore for a post based on its tags."
-msgstr ""
-"Muestra sugerencias a los recursos de Isidore para una entrada basadas en "
-"sus etiquetas."
+msgid "Displays suggestions to resources from Isidore for a post based on its tags."
+msgstr "Muestra sugerencias a los recursos de Isidore para una entrada basadas en sus etiquetas."
 
 #: isidore-suggestions.php:112 isidore-suggestions.php:162
 msgid "Search in Isidore"
@@ -192,8 +189,7 @@ msgstr "Error al cargar los datos XML !"
 
 #: isidore-suggestions.php:463
 msgid "PHP error : Ask your host to enable allow_url_fopen for your blog !"
-msgstr ""
-"Error de PHP : Pregunte a su host web para activar allow_url_fopen en PHP !"
+msgstr "Error de PHP : Pregunte a su host web para activar allow_url_fopen en PHP !"
 
 #: isidore-suggestions.php:466
 msgid "API error : No response !"
@@ -201,5 +197,4 @@ msgstr "Error de API ó API no disponible !"
 
 #: isidore-suggestions.php:471
 msgid "API error : Cataclysmic error ! Contact the support..."
-msgstr ""
-"Error de API : Póngase en contacto con los servicios de soporte técnico !"
+msgstr "Error de API : Póngase en contacto con los servicios de soporte técnico !"

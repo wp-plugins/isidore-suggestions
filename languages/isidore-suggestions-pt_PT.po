@@ -1,0 +1,200 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: isidore-suggestions\n"
+"POT-Creation-Date: 2015-07-27 16:57+0100\n"
+"PO-Revision-Date: 2015-07-27 17:10+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: isidore-suggestions.php:40
+msgid "Displays suggestions to resources from Isidore for a post based on its tags."
+msgstr "Mostra sugestões aos recursos de Isidore para um post baseadas em suas tags."
+
+#: isidore-suggestions.php:113 isidore-suggestions.php:163
+msgid "Search in Isidore"
+msgstr "Pesquisar no Isidore"
+
+#: isidore-suggestions.php:118
+msgid "Search"
+msgstr "Pesquisa"
+
+#: isidore-suggestions.php:159
+msgid "Isidore suggestions"
+msgstr "Sugestões Isidore"
+
+#: isidore-suggestions.php:169
+msgid "Biological anthropology"
+msgstr "Antropologia física"
+
+#: isidore-suggestions.php:170
+msgid "Social Anthropology and ethnology"
+msgstr "Antropologia Social e Etnologia"
+
+#: isidore-suggestions.php:171
+msgid "Architecture, space management"
+msgstr "Arquitectura, organização do espaço"
+
+#: isidore-suggestions.php:172
+msgid "Archaeology and Prehistory"
+msgstr "Arqueologia e Prehistoria"
+
+#: isidore-suggestions.php:173
+msgid "Art and history"
+msgstr "Arte e história da arte"
+
+#: isidore-suggestions.php:174
+msgid "Law"
+msgstr "Lei"
+
+#: isidore-suggestions.php:175
+msgid "Demography"
+msgstr "Demografía"
+
+#: isidore-suggestions.php:176
+msgid "Economies and finances"
+msgstr "Economias e finanças"
+
+#: isidore-suggestions.php:177
+msgid "Education"
+msgstr "Educação"
+
+#: isidore-suggestions.php:178
+msgid "Classical studies"
+msgstr "Estudos clássicos"
+
+#: isidore-suggestions.php:179
+msgid "Environmental studies"
+msgstr "Estudos do meio"
+
+#: isidore-suggestions.php:180
+msgid "Gender studies"
+msgstr "Estudos de gênero"
+
+#: isidore-suggestions.php:181
+msgid "Management"
+msgstr "Administração"
+
+#: isidore-suggestions.php:182
+msgid "Geography"
+msgstr "Geografia"
+
+#: isidore-suggestions.php:183
+msgid "History"
+msgstr "História"
+
+#: isidore-suggestions.php:184
+msgid "History, Philosophy and Sociology of Sciences"
+msgstr "História, Filosofia e Sociologia das Ciências"
+
+#: isidore-suggestions.php:185
+msgid "Cultural heritage and museology"
+msgstr "Património cultural e museología"
+
+#: isidore-suggestions.php:186
+msgid "Linguistics"
+msgstr "Linguística"
+
+#: isidore-suggestions.php:187
+msgid "Literature"
+msgstr "Literatura"
+
+#: isidore-suggestions.php:188
+msgid "Musicology and performing arts"
+msgstr "Música, musicología e artes escénicas"
+
+#: isidore-suggestions.php:189
+msgid "Methods and statistics"
+msgstr "Métodos e estatísticas"
+
+#: isidore-suggestions.php:190
+msgid "Philosophy"
+msgstr "Filosofia"
+
+#: isidore-suggestions.php:191
+msgid "Psychology"
+msgstr "Psicologia"
+
+#: isidore-suggestions.php:192
+msgid "Religions"
+msgstr "Religiões"
+
+#: isidore-suggestions.php:193
+msgid "Political science"
+msgstr "Ciência política"
+
+#: isidore-suggestions.php:194
+msgid "Communication sciences"
+msgstr "Ciências da informação e da comunicação"
+
+#: isidore-suggestions.php:195
+msgid "Sociology"
+msgstr "Sociologia"
+
+#: isidore-suggestions.php:199
+msgid "Suggestions"
+msgstr "Sugestões"
+
+#: isidore-suggestions.php:202 isidore-suggestions.php:240
+msgid "Title"
+msgstr "Título"
+
+#: isidore-suggestions.php:206
+msgid "Number of suggestions"
+msgstr "Número de sugestões"
+
+#: isidore-suggestions.php:220 isidore-suggestions.php:245
+msgid "Disciplines"
+msgstr "Disciplinas"
+
+#: isidore-suggestions.php:233
+msgid "Input search"
+msgstr "Campo de busca"
+
+#: isidore-suggestions.php:237
+msgid "Add an Isidore search box"
+msgstr "Quadro de busca Isidore"
+
+#: isidore-suggestions.php:415
+msgid "Keywords"
+msgstr "Palavras-chave"
+
+#: isidore-suggestions.php:430
+msgid "Authors"
+msgstr "Autores"
+
+#: isidore-suggestions.php:453
+msgid "AJAX error : Failed security check !"
+msgstr "Erro AJAX: Verificação de segurança falhou !"
+
+#: isidore-suggestions.php:491
+msgid "More results ..."
+msgstr "Mais resultados ..."
+
+#: isidore-suggestions.php:496
+msgid "No suggestion"
+msgstr "Nenhuma sugestão"
+
+#: isidore-suggestions.php:499
+msgid "XML error : Unable to load the data !"
+msgstr "Erro: Não foi possível carregar a fonte de dados XML !"
+
+#: isidore-suggestions.php:504
+msgid "PHP error : Ask your host to enable allow_url_fopen for your blog !"
+msgstr "Erro de PHP : Pergunte ao seu host da Web para activar allow_url_fopen para o seu blog !"
+
+#: isidore-suggestions.php:507
+msgid "API error : No response !"
+msgstr "Erro de API ou API não disponível !"
+
+#: isidore-suggestions.php:512
+msgid "API error : Cataclysmic error ! Contact the support..."
+msgstr "Erro de API : Ponha-se em contato com o suporte técnico !"

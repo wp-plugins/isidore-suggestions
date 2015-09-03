@@ -3,8 +3,8 @@
 Contributors: Huma-Num
 Tags: isidore, suggestions, linked data, sciences humaines et sociales, web sémantique, digital humanities, système de recommandation, HUMA-NUM, semantic web, Art and Humanities, recommendation system
 Requires at least: 3.0.0
-Tested up to: 4.2
-Stable tag: 2.0.1
+Tested up to: 4.3
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,9 @@ Note : Assurez-vous dans votre configuration PHP que l'option "allow_url_fopen" 
 3. Taggage manuel du contenu d’un article
 
 == Changelog ==
+
+= 2.1.0 =
+* Compatible avec la version 4.3 de WordPress
 
 = 2.0.1 =
 * Traduction du plugin en allemand, italien et portugais (en plus de l'anglais, de l'espagnol et du français déjà disponibles)

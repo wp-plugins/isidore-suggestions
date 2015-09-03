@@ -2,7 +2,7 @@
 /**
  * Plugin Name:	Isidore Suggestions 
  * Description:	Avec Isidore Suggestions, enrichissez vos articles de recommandations provenant d'Isidore, plateforme de recherche en SHS de 3 millions de données.
- * Version:		2.0.1
+ * Version:		2.1.0
  * Author:		HUMA-NUM
  * Author URI:	http://www.huma-num.fr 
  * License:		GPL-2.0+
@@ -44,7 +44,13 @@ class Isidore_suggestions extends WP_Widget {
 			'height'	=> 350,
 			'id_base'	=> 'isidore-suggestions'
 		);
-		$this->WP_Widget( 'isidore-suggestions', 'Isidore Suggestions', $widget_ops, $control_ops );
+		//create the widget (since 4.3)
+		parent::__construct(
+			'isidore-suggestions',
+			'Isidore Suggestions',
+			$widget_ops,
+			$control_ops
+		);
 		
 		add_action( 'init', array( $this, 'load_isidore_suggestions_plugin_textdomain' ) );
 		

@@ -19,6 +19,8 @@ Il est possible de cibler votre recherche en taguant le contenu de vos articles 
 
 Ce widget est disponible en version allemande, anglaise, espagnole, française, italienne et portugaise.
 
+Retrouvez sur le site d'[HUMA-NUM](http://www.huma-num.fr "HUMA-NUM"), le [manuel d'utilisation](http://www.huma-num.fr/sites/default/files/guide-module-isidore-suggestions.pdf "manuel d'utilisation") qui présente en détail les différents paramétrages possibles du plugin.
+
 == Installation ==
 
 1. Téléchargez le dossier de l'extension dans le répertoire wp-content/plugins.
